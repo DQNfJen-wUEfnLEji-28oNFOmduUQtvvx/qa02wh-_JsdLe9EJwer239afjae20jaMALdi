@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; height=device-height;">
+    <title>Russian Literature Essay #2</title>
+    <style media="screen">
+        html{background-image: url('gulag.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;}
+        body{word-wrap: break-word;font-size: 1.5rem; filter: contrast(150%);text-align: center;background: linear-gradient(90deg,  rgba(225, 225, 225, 0.5), rgba(225, 225, 225, 0.8), rgba(225, 225, 225, 0.8),rgba(225, 225, 225, 0.5));margin: auto;padding: 2% 14%;}
+        h3, h4{font-weight: normal;}
+        p{text-align: left;text-indent: 40px;word-wrap: break-word;}
+        blockquote{text-align: justify;color: gray;}
+        span.def{text-transform: ;}
+        @media (max-width: 800px){
+          body{padding: 1% 4%}
+        }
+    </style>
+  </head>
+  <body>
+
+    <h2>Russian Literature Essay #2</h2>
+    <h3><i>One Day in the Life of Ivan Denisovich</i></h3>
+    <h4>by Theo</h4>
+    <audio id="sound" src="https://vid.puffyan.us/latest_version?id=ZKbpTplWUl8&itag=22&local=true"></audio>
+    <p>The <i>Gulag</i>, (short for <i>Glávnoje Upravlénije Lageréj</i> or <i>Main Camp Administration</i>), was a branch of the Russian Government established by Vladimir Lenin to oversee the expansion of its forced labor camps (aka prison camps). These prison camps were built all over Russia [though the worst ones were in remote locations in the East (primarily Siberia), where conditions were harsh and survival difficult]. Their primary purpose was to punish criminal activity. However, criminal activity in Russia at the time encompassed pretty much everything from petty thieving to artistic sovereignty, not to mention political criticism/dissent, which typically earned you a trip to Siberia.</p>
+    <p>When Stalin assumed power, he was even more merciless than Lenin. Anyone he didn't like or perceived as a potential threat to his authority was deported to a gulag. [The term 'gulag' can also refer to any single prison camp in the system (or the 'archipelago', as Alexander Solzhenitsyn described it in his book <i>the Gulag Archipelago</i>)]. </p>
+    <p>Solzhenitsyn (1918 - 2008) was one of the many Russian literary figures who were relentlessly hounded and repressed by Stalin's regime. He was only lucky enough to have a few of his works published outside of Russia (as opposed to having almost no luck with anything in Russia). One of his most notable writings (among those published) was <i>One day in the Life of Ivan Denisovich</i>. Here he portrayed what it was like to work the gulags through the lens of his protagonist <i>Ivan Denisovich</i> (or <i>'Shukhov'</i>).</p>
+    <p>The novel starts with Shukhov waking to reveille. He feels ill and dreads the day ahead of him. However, as he completes task after task, he seems to gradually forget the pain he is in. And by the time night comes around, his outlook is quite positive: </p>
+    <blockquote>He'd had a lot of luck today. They hadn't put him in the cooler. The gang hadn't been chased out to work in the Socialist Community Development. He'd finagled an extra bowl of mush at noon. The boss had gotten them good rates for their work. He'd felt good making that wall. They hadn't found that piece of steel in the frisk. Caesar had paid him off in the evening. He'd bought some tobacco. And he'd gotten over that sickness. Nothing had spoiled that day and it had almost been happy. [p. 144]</blockquote>
+    <p>We learn that Shukhov received a sentence of ten years in the the gulags because he was falsely suspected of being a German spy during World War II. He has already survived eight years of his sentence. He stopped checking off the days a long time ago. He recognizes that even if he survives the entire ten years, he could be made to serve an additional sentence. Because of this, he sees it best to stay in the moment and focus on staying nourished and getting through one day at a time. </p>
+    <p>Life in the camp from the reader's perspective seems dismal or bland at best. Yet Shukhov seems to be able to stay quite rational and sane. He lives for the short-lived moments when he can consume his meager rations.</p>
+    <blockquote>He began to eat. He started with the watery stuff on the top and drank it right down. The warmth went through his body and his insides were sort of quivering waiting for that gruel to come down. It was great! This was what a prisoner lived for, this one little moment. Shukhov didn't have a grudge in the world now—about how long his sentence was, about how long their day was, about that Sunday they wouldn't get. All he thought now was: "We'll get through! We'll get through it all! And God grant it'll all come to an end." [p. 120]</blockquote>
+    <p><i>One day in the life of Ivan Denisovich</i> is similar to numerous other works of Russian literature in that it depicts the suffering and repression of the Russian people, as well as highlighting their solidarity and ability to adapt to and evolve from their situation. It also touches upon freedom and faith (in Shukhov's exchanges with Alyoshka), which are both eminent issues for many Russians.</p>
+    <p>I imagine that if I would have to live in something equivalent to a gulag for an extended period of time, the most challenging aspect of it would be the physical aspect. I actually think that I could cope with the mental aspect. If I were sent to a place like Guantánamo, or if they were to do something to me that was along the lines of what they have done to people like Julian Assange, it might be a different story. I might become hysterical or overwhelmingly depressed, and perhaps start thinking suicidal thoughts. But based on how Solzhenitsyn described the gulags, there would be potential for fellowship, and you would be continuously busy without really having any time to yourself <quote style='color:gray'>(Apart from sleeping, the prisoners' time was their own only for ten minutes at breakfast, five minutes at the noon break, and another five minutes at supper. [p. 12])</quote>, which would mean there would be less sustenance for negativity and depression to feed on.</p>
+    <br>
+
+    <button onclick="changeState()" id="state"style="position: absolute;top:10px;right:10px;box-shadow: -5px 5px 10px 0px gray;outline:none;border: none;border-radius: 6px 19px;padding:10px"type="button" name="button"></button>
+    <br>
+    <br>
+  </body>
+
+  <script type="text/javascript">
+  let audio=document.getElementById('sound');
+  let state=document.getElementById('state')
+  audio.currentTime=2;
+  audio.play();
+  if (audio.paused==false) {state.innerHTML='Pause audio'}
+  else{state.innerHTML='&nbsp;Play audio &nbsp;'}
+  function changeState(){
+    if (audio.paused==false){audio.pause();state.innerHTML='&nbsp;Play audio &nbsp;'}
+    else{audio.play();state.innerHTML='Pause audio'}
+  }
+  </script>
+</html>
