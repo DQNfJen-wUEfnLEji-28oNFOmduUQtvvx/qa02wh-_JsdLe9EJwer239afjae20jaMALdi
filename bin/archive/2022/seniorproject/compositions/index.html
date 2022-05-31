@@ -132,6 +132,7 @@ else{document.getElementById('voice1').src='';document.getElementById('voice2').
 let vid= document.getElementById('vid');
 let type = '.mp3';
 let trackcount = 0;
+let deg;
 let next=document.getElementById('next');
 function openProf() {
 window.location.assign('');}
@@ -144,11 +145,11 @@ if(random_track.includes('.')){type=""}else{type=".mp3"}
 if(trackcount==(tracks.length)-1){next.innerHTML="restart playback →"}
 if (trackcount>=(tracks.length)){restartPlayback()}
 else if(xi.innerHTML.includes('*'+random_track+'*')){playNext()}
-else{xi.innerHTML+='*'+random_track+'*';trackcount++;vid.src='Media/'+random_track + type;}
+else{xi.innerHTML+='*'+random_track+'*';deg=random_track;trackcount++;vid.src='Media/'+random_track + type;}
 randbackCol();
 vid.focus();
 vid.play();
-document.getElementById('vidactions').innerHTML=document.getElementById(random_track+'d').innerHTML;
+document.getElementById('vidactions').innerHTML=document.getElementById(deg+'d').innerHTML;
 }
 function restartPlayback() {
 trackcount=0;
