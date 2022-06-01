@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shell Oil Nigeria</title>
+    <style media="screen">
+    body{background: rgb(20,50,30); color: white;padding: 20px}
+      input{display: block;margin: 40px auto;outline: none;border-width: 0.4px;text-align: center;}
+      video{width:90%;display: block;margin:50px auto;}
+      iframe{width: 90%;display: block;margin: 0px auto 50px auto;}
+      p{display: block;margin: auto}
+      #notes{display: block;margin: auto;width: 90%;}
+      #notes.hidden{display: none}
+    </style>
+  </head>
+  <body onload='main()'>
+    <center>
+    <h1 style="color:yellow;background: transparent;text-shadow: 2px -1px 6px red;box-shadow:-1px 2px 97px 3px rgba(200, 200, 200, 0.9)">Shell Oil Nigeria</h1>
+  </center>
+
+  <center>    <h2 style="color:dodgerblue;cursor:pointer;text-decoration:underline;"onclick="document.getElementById('notes').classList.toggle('hidden')">Notes</h2></center>
+<div id="notes" class="hidden">
+  •	Nigeria as most populous country in Africa. Capital Lagos is second most populous city in Africa. Also  has highest GDP (25th highest worldwide). At least 370 known ethnic groups and 500+ spoken languages.
+  <br><br>
+•	Niger (Neezhair) Delta covering 20,00 sq km in southern Nigeria (largest wetland in Africa). Used to be a very biodiverse area, with many different ecosystems including mangrove swamps, freshwater swamps, rainforest, and lots of fish and wildlife. Most people fished or farmed for a living.
+<br><br>
+•	With a newly booming oil market, Shell Corporation (aka Royal Dutch Shell) saw an opportunity for oil production in Nigeria in the 1950s, as the country was rich in oil but too poor and corrupt to finance its extraction. (Originally it was palm oil that was sought after, but now it is crude oil). Shell established relations with the government, and started drilling in 1958.
+<br><br>
+•	Shell's presence was unwelcome to the natives. They did not receive any of the profits, and the emergent oil spills began to quickly decimate their environment. The water which they drunk from was poisoned. All the fish died. The soil became unsuitable for growing crops. The air was polluted. Cancer and other diseases became commonplace. Decades upon decades of unregulated oil spills ensued.
+<br><br>
+•	Nigerian playwright Ken Saro-Wiwa tried to confront Shell. He founded MOSOP (Movement for the Survival of the Ogoni People. (The Ogonis were one of the worst hit tribes as a result of Shell's activities.) He and others started organizing peaceful protests against Shell. Shell asked Nigerian government to get protesters out of their way, so Nigerian government arrested Sara-Wiwa and company (Ogoni 9) on fabricated charges of murder. They faced prison, and were then convicted (by jury bribed by Shell to give false testimony) and hung in 1995.
+<br><br>
+•	Oil spills have continued. Two massive ones in 2008 and 2009 spilled ≈ 1/2 million barrels of oil. Also, some Nigerians have had to turn to illegal refining or piracy in order to survive, due to the levels of poverty they face.
+<br><br><br>
+</div>
+
+    <iframe height="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=5.980743408203126%2C4.302499854602177%2C7.07794189453125%2C5.384968460898335&amp;layer=hot" style="border: 1px solid black"></iframe>
+
+
+    <!--<video  controls  style="margin:auto" src="https://invidious.sethforprivacy.com/latest_version?id=f53jVvJBT6E&itag=22">
+
+    </video>-->
+
+    <video id="v1" src="https://vid.puffyan.us/latest_version?id=vAgw_Zyznx0&itag=22" controls>
+
+    </video>
+
+
+
+    <video id='v2' onpause="if(this.currentTime>=219||this.currentTime<=119){event.preventDefault()} else{this.src='https://vid.puffyan.us/latest_version?id=RnQSa_AVpSo&itag=22#t=218,1003';this.play()}" src="https://vid.puffyan.us/latest_version?id=RnQSa_AVpSo&itag=22#t=0,120" controls>
+
+    </video>
+
+ <!--<input type="text" oninput="document.getElementById('rant').playbackRate=this.value;clearInterval(nio);" placeholder="speed">-->
+
+
+    <video id="v3" src="https://invidious.sethforprivacy.com/latest_version?id=3A-tLtqM8YU&itag=22" controls>
+
+    </video>
+
+
+    <script type="text/javascript">
+function main() {
+  document.getElementById('v1').playbackRate=1.327;
+  document.getElementById('v2').playbackRate=1.327;
+  document.getElementById('v3').playbackRate=1.327;
+  //nio=setInterval(speedup, 2000)
+}
+//function speedup(){
+//  var tracks = ['.9', '1.1', '1.36', '1.45', '1.17', '0.6s3', '1.7']
+  //var random_track = tracks[Math.floor(Math.random()*tracks.length)];document.getElementById('v2').playbackRate=random_track}
+    //var tracks = ['.9', '1.1', '1.36', '1.45', '1.17', '0.6s3', '1.7']
+    </script>
+
+  </body>
+</html>
