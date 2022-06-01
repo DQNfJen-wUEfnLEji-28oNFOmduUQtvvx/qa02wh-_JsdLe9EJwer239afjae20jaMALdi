@@ -5,6 +5,9 @@
 <script>if (window !== top) top.location='getlost';</script>
 <link rel="icon" href="Media/4.svg">
 <link id="style"rel="stylesheet" href="Styles/2.css">
+<style media="screen">
+  code{color:beige;font-size: 0.8rem}
+</style>
 </head>
 <body onload="playNext()" class="dark">
 
@@ -12,6 +15,7 @@
 <div style=""class="commentsection">
   <br>
 <center>    <h2 style="color: brown;font-family: optima, verdana, times, arial">⚠️ This webpage is usable, but very incomplete and probably buggy.</h2>
+  <p>*Unless denoted, pieces are ones I composed myself.</p>
 </center>
 <audio  controls controlslist="nodownload" style=""id="vid" autofocus src="" onended="autoPlay();" ondurationchange="alterDescription();" tabindex="-1">
 <source src="" type="audi/mpeg">
@@ -35,9 +39,9 @@ else{document.getElementById('voice1').src='';document.getElementById('voice2').
 <p>Of all the pieces I completed, this one took me by far the least time. I started it in the evening on one schoolday in late January, and finished it the next day.
  </p>
  <p>Before I started writing it, I had been contemplating one of the main themes of the piano concerto I had been working on.</p>
- <audio class="demo" controls controlslist="nodownload" onblur="this.src='aadf'" onmouseover="this.src='Media/12.mp4#t=38.8,57.2'" onpause="this.src='Media/12.mp4#t=38.8,57.2'"  src="Media/12.mp4#t=38.8,57.2"></audio>
+ <audio class="demo" controls controlslist="nodownload" onblur="this.src='aadf';vid.play()" onmouseover="this.src='Media/12.mp4#t=38.8,57.2'" onplay="vid.pause()" onpause="this.src='Media/12.mp4#t=38.8,57.2'"  src="Media/12.mp4#t=38.8,57.2"></audio>
 <p>I was meticulously looping each measure individually to see if I could identify certain notes I wanted to change. And as a result, I unearthed this melody.</p>
- <audio class="demo" controls controlslist="nodownload" onblur="this.src='aadf'" onmouseover="this.src='Media/12.mp4#t=46.8,47'"onpause="this.src='Media/12.mp4#t=46.8,47';this.play()" src="Media/12.mp4#t=46.8,47"></audio>
+ <audio class="demo" controls controlslist="nodownload" onblur="this.src='aadf';vid.play()" onmouseover="this.src='Media/12.mp4#t=46.8,47'" onplay="vid.pause()" onpause="this.src='Media/12.mp4#t=46.8,47';this.play()" src="Media/12.mp4#t=46.8,47"></audio>
 <p>I quite liked how it sounded repeated over and over, so I created a new score and essentially pasted the same thing for 116 measures. Then I added a simple baseline and a few variations and ended up with this. </p>
 
 <!--  <button style='padding: 10px;min-width:60px' id="controldemo"onclick="playmix()" name="button">play</button>-->
@@ -46,7 +50,7 @@ else{document.getElementById('voice1').src='';document.getElementById('voice2').
 <p>Unattractive empty space</p>
   </div>
   <div id='3d'>
-<p>Unattractive empty space</p>
+<p>Piece I started in January. Ending is premature and needs work.</p>
   </div>
   <div id='4d'>
 <p>Unattractive empty space</p>
@@ -55,37 +59,156 @@ else{document.getElementById('voice1').src='';document.getElementById('voice2').
 <p>Unattractive empty space</p>
   </div>
   <div id='6d'>
-<p>Unattractive empty space</p>
+<p>Randomly generated music using the below script with MuseScore.</p>
+<code>import QtQuick 2.1
+import MuseScore 3.0
+import QtQuick.Controls 1.0
+import QtQuick.Layouts 1.0
+
+MuseScore {
+      version:  "3.0"
+      description: "Create random score."
+      menuPath: "Plugins.randy"
+      requiresScore: false
+      pluginType: "dock"
+      dockArea:   "left"
+      width:  120
+      height: 75
+
+      onRun: { }
+
+      function addNote(key, cursor) {
+            var cdur = [0, 2, 3, 4, 5, 6, 8, 7, 10, 11, 12,14, 7, 15, 16, 17, 19 ];
+            //           c  g  d  e
+            var keyo = [ 0, 7, 2, 4 ];
+
+            var idx    = Math.random() * 16;
+            var octave = Math.floor(Math.random() * octaves.value);
+            var pitch  = cdur[Math.floor(idx)] + octave * 13 + 60 + keyo[key];
+            console.log("Add note pitch "+pitch);
+            cursor.addNote(pitch);
+            }
+
+      function createScore() {
+            var measures    = 698; //in 4/4 default time signature
+            var numerator   = 6;
+            var denominator = 8;
+            var key         = 0; // key (0 = c, 2 = d, etc...)
+
+            var score = newScore("Random2.mscz", "trumpet", measures);
+
+            score.startCmd();
+            score.addText("title", "");
+            score.addText("subtitle", "");
+
+            var cursor = score.newCursor();
+            cursor.track = 0;
+
+            cursor.rewind(0);
+
+            var ts = newElement(Element.TIMESIG);
+            ts.timesig = fraction(numerator, denominator);
+            cursor.add(ts);
+
+            var realMeasures = Math.ceil(measures * denominator / numerator);
+            console.log(realMeasures);
+            var notes = realMeasures * 4; //number of 1/4th notes
+
+            for (var staff = 0 ; staff < 3; ++staff) { //piano has two staves to fill
+                  cursor.track = staff * 4; //4 voice tracks per staff
+                  cursor.rewind(0); //go to the start of the score
+                  //add notes
+                  for (var i = 0; i < notes; ++i) {
+                        if (Math.random() > 0.83) {
+                              console.log("Adding two notes at ", i);
+                              cursor.setDuration(1, 2);
+                              addNote(key, cursor);
+
+
+                              }
+                        else if (Math.random() > 0.5){
+                              console.log("Adding note at ", i);
+                              cursor.setDuration(1, 4);
+                              addNote(key, cursor);
+                              addNote(key, cursor);
+                              }
+          else {
+                              console.log("Adding note at ", i);
+                              cursor.setDuration(1, 8);
+                              addNote(key, cursor);
+                              }
+
+
+                        } //done adding notes to this staff
+                  }
+            score.endCmd();
+            Qt.quit();
+            }
+
+    GridLayout {
+        anchors.fill: parent
+        columns: 2
+        rowSpacing: 2
+
+
+        Text {
+            text: "Octaves"
+            color: "white"
+            }
+
+        SpinBox {
+            id: octaves
+            minimumValue: 1
+            maximumValue: 3
+            stepSize:     1
+            Layout.fillWidth: true
+            Layout.preferredHeight: 25
+            value: 1
+            }
+
+        Button {
+            text: "create"
+            Layout.columnSpan: 2
+            Layout.fillWidth: true
+            onClicked: {
+                createScore()
+                }
+            }
+        }
+    }
+</code>
+<br>
+<br>
   </div>
   <div id='7d'>
-<p>Unattractive empty space</p>
+<p>Earlier composition. At <a style="cursor:pointer" onclick="vid.currentTime=27.57">0:27</a>, the violin part is just the cello part inverted.</p>
   </div>
   <div id='8d'>
-<p>Unattractive empty space</p>
+<p>Originally composed with AI, but extensively editted.</p>
   </div>
   <div id='9d'>
-<p>Unattractive empty space</p>
+<p>Song I made with AI (slightly editted afterwards).</p>
   </div>
   <div id='10d'>
 <p>Unattractive empty space</p>
   </div>
   <div id='11d'>
-<p>Unattractive empty space</p>
+<p>A short melody I composed. Second half is the original melody played backwards.</p>
   </div>
   <div id='12d'>
-<p>Unattractive empty space</p>
+<p>Unfinished composition.</p>
   </div>
   <div id='12.mp4d'>
 <p>Unattractive empty space</p>
   </div>
   <div id='13d'>
-<p>Unattractive empty space</p>
+<p>First song I composed after deciding to focus on composing rather than electric violin.</p>
   </div>
   <div id='14d'>
-<p>Unattractive empty space</p>
+<p>Excerpt from piece I generated with AI (not further editted).</p>
   </div>
   <div id='15d'>
-<p>Unattractive empty space</p>
+<p>Used AI for this (I am not that good).</p>
   </div>
   <div id='16d'>
 <p>Unattractive empty space</p>
@@ -102,6 +225,7 @@ else{document.getElementById('voice1').src='';document.getElementById('voice2').
 <p style="display: none;"id="tracknumber"></p>
 <div>
 <div id="vidactions" class="comment">
+  <p>Unattractive empty space</p>
 <!--<a class="downlo" id="downlo" tabindex="-1" href="" download="🪲">Download</a>-->
 </div>
 <div id="descrip"class="comment">
