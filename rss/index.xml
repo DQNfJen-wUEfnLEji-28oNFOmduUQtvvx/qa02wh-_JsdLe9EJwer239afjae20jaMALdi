@@ -5,5 +5,10 @@
   <link>https://theo.monster</link>
   <atom:link href="https://theo.monster/rss/index.xml" rel="self" type="application/rss+xml" />
   <description>Updates</description>
+  <image>
+   <url>https://theo.monster/crypto/monerowalletqrcode.png</url>
+   <title>Monero Address</title>
+   <link>https://theo.monster</link>
+  </image>
 </channel>
 </rss>
