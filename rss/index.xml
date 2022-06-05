@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
+<channel>
+  <title>Theo's RSS Feed</title>
+  <link>https://theo.monster</link>
+  <atom:link href="https://theo.monster/rss/index.xml" rel="self" type="application/rss+xml" />
+  <description>Updates</description>
+</channel>
+</rss>
