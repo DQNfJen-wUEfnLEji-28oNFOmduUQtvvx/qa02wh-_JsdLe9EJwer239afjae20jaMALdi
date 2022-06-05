@@ -9,6 +9,8 @@
    <url>https://theo.monster/crypto/monerowalletqrcode.png</url>
    <title>Monero Address</title>
    <link>https://theo.monster</link>
+   <width>128</width>
+   <height>128</height>
   </image>
 </channel>
 </rss>
