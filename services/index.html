@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theo's Services</title>
     <style media="screen">
-      body{background: darkgray; padding: 0px 10px;}
-      .placards{width: 100%;display: grid;grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));grid-gap: 0.7em;justify-content: center;}
-      .placard{box-shadow: none; margin: 10px 5px 0px 5px; transition: 0.3s; background-color: rgba(230, 230, 230, 0.8); border-radius: 5px; padding: 15px; font-size: 15px; text-align: center; display: flex; flex-direction: column; }
-      .placard:hover{box-shadow: 0 3px 9px  rgba(70, 70, 60, 0.8);}
+      body{background: white; padding: 0px 10px;}
+      h1{text-align: center;}
+      .placards{background: white; width: 100%;display: grid;grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));grid-gap: 0.7em;justify-content: center;}
+      .placard{background: inherit; box-shadow: 0 3px 9px  rgba(70, 70, 60, 0.8);margin: 10px 5px 0px 5px; transition: 0.3s; border-radius: 5px; padding: 15px; font-size: 15px; text-align: center; display: flex; flex-direction: column; }
+      .placard:hover{background: #efffee;}
+      .placard.unresponsive{cursor: default;margin: 0px 5px 10px 0px;box-shadow: none;}
+      .placard.unresponsive:hover{background: inherit;}
       a.link{color: inherit;text-decoration: none}
       button.link{margin-top: auto;cursor: pointer; padding: 10px; min-width: 100px; background: rgba(200, 250, 240, 0.5)}
       button.link:hover{filter: hue-rotate(90deg);}
+      @media (max-width:450px){
+        .placards{grid-template-columns: repeat(auto-fill, minmax(202px, 1fr));grid-gap: 0.7em;}
+      }
     </style>
   </head>
   <body>
@@ -37,14 +43,19 @@
         </a>
       </div>
 
-      <div class="placard">
-        <a href="" class="link">
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+      <div class="placard unresponsive">
+        <a class="link">
           <h1>More to come...(?)</h1>
-          <p>I would like to host a number of other instances here in the future. Among my top priorities are: <a href="https://github.com/searxng/searxng">SearXNG</a>, <a href="https://github.com/iv-org/invidious">Invidious</a>, <a href="https://simplytranslate.org/">SimplyTranslate</a>, and <a href="https://codeberg.org/orenom/Wikiless">Wikiless</a>.</p>
+          <p>I would like to host a number of other instances here in the future. Among my top priorities are: <a href="https://github.com/searxng/searxng">SearXNG</a>, <a href="https://github.com/iv-org/invidious">Invidious</a>, <a href="https://simplytranslate.org/">SimplyTranslate</a>, <a href="https://docs.cryptpad.fr/en/dev_guide/setup.html">Cryptpad</a>, and <a href="https://codeberg.org/orenom/Wikiless">Wikiless</a>.</p>
         </a>
       </div>
 
-    </div>
 
   </body>
 </html>
