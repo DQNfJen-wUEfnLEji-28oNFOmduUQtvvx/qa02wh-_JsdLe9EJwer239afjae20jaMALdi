@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CAS</title>
+  <link href="css/cas-ui.css" rel="stylesheet">
+  <script src="js/cas/cas.js"></script>
+  <script>main = diff;</script>
+</head>
+<body>
+
+<div class="navi">
+<a href="./">Home</a>
+| <a href="cas.html">Calculator</a>
+| <a href="expand.html">Expander</a>
+| <a href="doc-cas.html">Help</a>
+</div>
+<br><br><br>
+<input type="button" onclick="main();" value="d/dx">
+<input type="text" id="input1" onclick="main();" onkeyup="main();handle_keys(event);">
+<br>
+<div class="output" id="output1">
+</div>
+<br>
+<input type="button" onclick="store();" name="" value="store →">
+<br>
+<br>
+<ol>
+<li id="storage1" class="stor"><span id="value1" class="storage"></span></li>
+<li id="storage2" class="stor"><span id="value2" class="storage"></span></li>
+<li id="storage3" class="stor"><span id="value3" class="storage"></span></li>
+<li id="storage4" class="stor"><span id="value4" class="storage"></span></li>
+<li id="storage5" class="stor"><span id="value5" class="storage"></span></li>
+
+
+</ol>
+</body>
+</html>

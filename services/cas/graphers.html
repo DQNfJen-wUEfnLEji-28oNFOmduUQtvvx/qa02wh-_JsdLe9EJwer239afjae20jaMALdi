@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphers</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<table class="navigation">
+<tr>
+<td><a href="./">Home</a>
+<td><a href="doc.html">Manual</a>
+<td><a href="graphers-dark.html">Dark mode</a>
+</table>
+
+<h2>Function graphers, visualisation</h2>
+<h3>Table of contents</h3>
+<ol>
+<li><a href="#real-functions">Real functions</a>
+<li><a href="#implicit-functions">Implicit functions</a>
+<li><a href="#parametric-equations">Parametric equations</a>
+<li><a href="#discrete-functions">Discrete functions</a>
+<li><a href="#inequalities">Inequalities</a>
+<li><a href="#initial-value-problems">Initial value problems</a>
+<li><a href="#bivariate-functions">Bivariate functions</a>
+<li><a href="#parametric-surfaces">Parametric surfaces</a>
+<li><a href="#implicit-surfaces">Implicit surfaces</a>
+<li><a href="#vector-fields">Vector fields</a>
+<li><a href="#complex-functions">Complex functions</a>
+<li><a href="#complex-dynamics">Complex dynamics</a>
+</ol>
+
+<br>
+<h3 id="real-functions">Real functions</h3>
+<ul>
+<li><a href="plot.html?sin(x)"
+  >A function</a>.
+<li><a href="plot.html?sin(x),cos(x),tan(x),cot(x)"
+  >Several functions</a>.
+<li><a href="plot.html?f(x),f%27(x);%20f(x):=sin(x)"
+  >A function and its derivative</a>.
+<li><a href="plot.html?f(x),f%27(x),f%27%27(x),f%27%27%27(x);%20f(x):=sin(x)"
+  >A function and its first three derivatives</a>.
+<li><a href="plot.html?f(x);%20f(x):=x*(x-2);;calc(%22zeros(f,-10,10)%22)"
+  >Zeros of a function</a>.
+<li><a href="plot.html?f(x),%20f(a)+f%27(a)*(x-a);%20a:=1,%20f(x):=sin(x)"
+  >A tangent of a function</a>.
+<li><a href="plot.html?int(0,x,t.sin(t)/t)"
+  >An antiderivative</a>.
+<li><a href="plot.html?int(0,10,t.t%5e(x-1)*e%5e(-t))"
+  >Integral representation of the gamma function</a>.
+<li><a href="plot.html?x%5en%20for%20n%20in%20-4:4"
+  >A family of functions</a>.
+<li><a href="plot.html?if(x%3c1,0,x-1)"
+  >A distinction of cases</a>.
+<li><a href="plot.html?p(x);%20p:=ipp(%5b0,0%5d,%5b1,1%5d,%5b2,0%5d)"
+  >An interpolation polynomial</a>.
+<li><a href="plot.html?(p(x);%20p:=ipp(%5b0,0%5d,%5b1,1%5d,%5bn,0%5d))%20for%20n%20in%202:8"
+  >A family of interpolation polynomials</a>.
+<li><a href="plot.html?f(x);%20f(x):=x%5e2;;calc(%22table(f,0:4:0.5)%22)"
+  >Table for a function</a>.
+<li><a href="plot.html?y=x%5ea;%20slider(a,0,2)"
+  >Slider for one parameter</a>.
+<li><a href="plot.html?y=a*sin(b*x);%20slider(a,1,4),%20slider(b,1,4)"
+  >Sliders for two parameters</a>.
+<li><a href="plot.html?sum(1,n,k.sin((2k-1)*x)/(2k-1));%20slider(n,1,20)"
+  >Partial sum of a Fourier series</a>.
+</ul>
+
+<br>
+<h3 id="implicit-functions">Implicit functions</h3>
+<ul>
+<li><a href="plot.html?x%5e2-y%5e2=1"
+  >An implicit function</a>.
+<li><a href="plot.html?x%5e2-y%5e2=1,y=x,y=-x"
+  >An implicit function and its asymptotes</a>.
+<li><a href="plot.html?abs(x)%5en+abs(y)%5en=1%20for%20n%20in%20%5b1/2,1,2,4%5d"
+  >A family of implicit functions</a>.
+<li><a href="plot.html?x%5e2+(y/x)%5e2=1;;scale(0.5)"
+  >Lemniscate of Gerono</a>.
+</ul>
+
+<br>
+<h3 id="parametric-equations">Parametric equations</h3>
+<ul>
+<li><a href="plot.html?%5bcos(t),sin(t)%5d"
+  >The unit circle</a>.
+<li><a href="plot.html?%5bcos(t),sin(2t)/2%5d;;scale(0.5)"
+  >The lemniscate of Gerono</a>.
+<li><a href="plot.html?%5bt*cos(pi*t),t*sin(pi*t)%5d;%20t0:=0,t1:=4"
+  >A spiral</a>.
+<li><a href="plot.html?%5bint(0,t,t.cos(t%5e2)),int(0,t,t.sin(t%5e2))%5d;t0:=-10,t1:=10;;scale(0.2)"
+  >An Euler spiral</a>.
+<li><a href="plot-bivariate.html?%5bcos(t),sin(t),t%5d;;scale(0.5)"
+  >A helix</a>.
+<li><a href="plot.html?%5bcos(t)+cos(2pi/m*n),sin(t)+sin(2pi/m*n)%5d%20for%20n%20in%200:m-1;%20m:=6"
+  >A family of parametric curves</a>.
+<li><a href="plot.html?%5b(1-a)*(cos(t)-8)+a*(cos(t)+8),(1-a)*sin(t)+a*sin(2t)/2%5d%20for%20a%20in%200:1:0.2"
+  >Metamorphosis</a>.
+<li><a href="plot.html?rot(45grad)*%5b4cos(t),sin(t)%5d"
+  >Applying a rotation matrix</a>.
+<li><a href="plot.html?rot(n*grad)*%5b4cos(t),sin(t)%5d%20for%20n%20in%200:360:10"
+  >Applying a family of rotation matrices</a>.
+<li><a href="plot.html?f(t),vec(f(a),f%27(a));%20f(t):=%5b2cos(t),sin(2t)%5d;%20slider(a,0,2pi)"
+  >Tangential vector of a curve</a>.
+<li><a href="plot.html?f(t),vec(f(a),T,rot(pi/2)*T);%20T:=f%27(a)/%7cf%27(a)%7c;%20f(t):=%5b2cos(t),sin(2t)%5d;%20slider(a,0,2pi)"
+  >TN-frame</a>.
+<li><a href="plot.html?f(t),f(a)+1/K*(%5bcos(t),sin(t)%5d+N),points(%5bf(a)%5d);%20N:=rot(pi/2)*T;%20K:=det(cat(%5bf%27(a)%5d,%5bf%27%27(a)%5d))/%7cf%27(a)%7c%5e3;%20T:=f%27(a)/%7cf%27(a)%7c;%20f(t):=%5b2cos(t),sin(2t)%5d;%20slider(a,0,2pi)"
+  >Osculating circle</a>.
+<li><a href="plot.html?(sin(5t)+4)*%5bcos(t),sin(t)%5d"
+  >A smooth star</a>.
+</ul>
+
+
+<br>
+<h3 id="discrete-functions">Discrete functions</h3>
+<ul>
+<li><a href="plot.html?points(a,1:20);%20a(n):=1/n"
+  >A sequence</a>, explicitly defined.
+<li><a href="plot.html?points(a,1:20);%20a(1):=1,%20a(2):=1,%20a(n):=a(n-1)+a(n-2);;scale(1,2)"
+  >A sequence</a>, recursively defined.
+<li><a href="plot.html?points(a,1:20),-2,2;%20a(n):=1/n"
+  >A sequence</a> and some bounds.
+<li><a href="plot.html?points(s,1:100);%20a(n):=1/n,%20s(n):=sum(1,n,a);;scale(5,1)"
+  >A series</a>.
+<li><a href="plot.html?points(f,1:2000);%20f(n):=phi(n);;scale(100)"
+  >Euler's totient function</a>.
+<li><a href="plot.html?points(a,1:1000);%20a(0):=0,%20a(n):=a(n-1)+rand()-1/2;;scale(100,5)"
+  >A random walk</a>.
+<li><a href="plot.html?points(Q,1:4000),%20x/2;%20Q(1):=1,%20Q(2):=1,%20Q(n):=Q(n-Q(n-1))+Q(n-Q(n-2));;scale(100)"
+  >Hofstadter's Q sequence</a>.
+<li><a href="plot.html?points(a,1:20);%20a(1):=1,%20a(2):=1,%20a(n):=a(n-1)+a(n-2);;calc(%22table(a,1:20)%22)"
+  >Table for a sequence</a>.
+<li><a href="plot.html?points(a,1:20);%20a(1):=1,%20a(2):=1,%20a(n):=a(n-1)+a(n-2);;calc(%22map(a,1:20)%22)"
+  >Value list for a sequence</a>.
+</ul>
+
+<br>
+<h3 id="inequalities">Inequalities</h3>
+<ul>
+<li><a href="plot.html?abs(x)%3c1"
+  >An inequality in one variable</a>.
+<li><a href="plot.html?abs(x)+abs(y)%3c1"
+  >An inequality in two variables</a>.
+<li><a href="plot.html?abs(x)+abs(y)%3c2,abs(y)%3c1"
+  >A system of inequalities</a>. Covering visible.
+<li><a href="plot.html?abs(x)+abs(y)%3c2&abs(y)%3c1"
+  >Solution set of that system</a>.
+</ul>
+
+<br>
+<h3 id="initial-value-problems">Initial value problems</h3>
+<ul>
+<li><a href="plot.html?y%27=y;%20p:=%5b0,1%5d"
+  >A first order ODE</a>. Initial state is given by
+  <code>p:=[x<sub>0</sub>,y(x<sub>0</sub>)]</code>.
+<li><a href="plot.html?y%27%27=-y;%20p:=%5b0,0,1%5d"
+  >A second order ODE</a>. Initial state is given by
+  <code>p:=[x<sub>0</sub>,y(x<sub>0</sub>),y'(x<sub>0</sub>)]</code>.
+<li><a href="plot.html?x(t);%20x%27%27=t*x;%20p:=%5b0,0,1%5d"
+  >For a function of time</a>.
+<li><a href="vector-field.html?y%27=y,%20%5b1,y%5d;%20p:=%5b0,1%5d"
+  >Slope field of a first order ODE</a>.
+<li><a href="plot.html?f(x);%20f:=iter(y.pli(x.1+int(0,x,t.y(t)),-10,10,0.1),40,t.1)"
+  >A Picard iteration</a>.
+<li><a href="plot.html?f(x)%5b0%5d;%20f(x):=expm(x*A)*%5b1,0%5d;%20A:=%5b%5b0,1%5d,%5b-1,0%5d%5d"
+  >Solving a system by matrix exponential</a>.
+<li><a href="plot.html?u(x),v(x);%20%5bu,v%5d%27=%5bv,-u%5d;%20p:=%5b0,1,0%5d"
+  >An autonomous system of two ODE</a>.
+<li><a href="plot.html?u(x),v(x);%20%5bu,v%5d%27=%5bv,u*x%5d;%20p:=%5b0,1,0%5d"
+  >A non-autonomous system of two ODE</a>.
+<li><a href="vector-field.html?(curve(%5bu(t),v(t)%5d);%20p:=%5b0,0,a%5d;%20%5bu,v%5d%27=f(u,v))%20for%20a%20in%20-6:6,%20f(x,y);%20t0:=-10,%20t1:=10;%20f(u,v):=%5bv,-v/4-sin(u)%5d"
+  >Phase portrait of the damped pendulum</a>.
+  <a href="vector-field.html?f(x,y);%20f(u,v):=%5bv,-v/4-sin(u)%5d;%20stream(1)"
+  >Stream lines</a>.
+<li><a href="plot.html?x(t);%20x%27%27=-x/%7cx%7c%5e3;%20p:=%5b0,%5b4,0%5d,%5b0,0.2%5d%5d;%20t1:=20;%20tw:=20"
+  >The one body problem</a>.
+  <a href="plot.html?points(x,0:20:0.5);%20x%27%27=-x/%7cx%7c%5e3;%20p:=%5b0,%5b4,0%5d,%5b0,0.2%5d%5d;%20t1:=20;%20tw:=20"
+  >Stroboskopic view</a>.
+<li><a href="plot.html?%5bx(t),y(t)%5d;%20%5bx,y,vx,vy%5d%27=%5bvx,vy,-x/%7c%5bx,y%5d%7c%5e3,-y/%7c%5bx,y%5d%7c%5e3%5d;%20p:=%5b0,4,0,0,0.2%5d;%20t1:=20;%20tw:=20"
+  >The one body problem as a first order system</a>.
+<li><a href="plot.html?x(t),1/%7c%5bx,y%5d%7c;%20x%27%27=x/%7cx%7c%5e3;%20p:=%5b0,%5b-10,1%5d,%5b2,0%5d%5d;%20t1:=20;%20tw:=20"
+  >Scattering at a Coulomb potential</a>.
+<li><a href="plot-bivariate.html?%5bx(t),y(t),z(t)%5d;%20%5bx,y,z%5d%27=%5b10(y-x),x*(28-z)-y,x*y-8/3*z%5d;%20p:=%5b0,1,0,20%5d;%20t1:=20;%20tw:=20;;scale(5)"
+  >The Lorenz attractor</a>.
+  <a href="plot.html?%5bx(t),z(t)%5d;%20%5bx,y,z%5d%27=%5b10(y-x),x*(28-z)-y,x*y-8/3*z%5d;%20p:=%5b0,1,0,20%5d;%20t1:=40;%20tw:=40;;scale(5),P(0,20)"
+  >Projection on the xz plane</a>.
+</ul>
+
+<br>
+<h3 id="bivariate-functions">Bivariate functions</h3>
+<ul>
+<li><a href="plot-bivariate.html?cos(sqrt(x^2+y^2))"
+  >A bivariate function</a>.
+  <a href="plot-bivariate.html?cos(sqrt(x%5e2+y%5e2));%20slider(alpha,0,1)"
+  >Transparent graph</a>.
+<li><a href="plot-bivariate.html?cos(sqrt(x^2+y^2));d(20)"
+  >A bivariate function</a> in perspective projection.
+<li><a href="plot-bivariate.html?4x*exp(-x%5e2-y%5e2);%20colorfn(1);;scale(0.2)"
+  >Heatmap</a>.
+  <a href="plot-bivariate.html?4x*exp(-x%5e2-y%5e2);%20colorfn(1);%20slider(alpha,0,1);;scale(0.2)"
+  >Transparent graph</a>.
+<li><a href="plot-bivariate.html?10+exp(-(x-20)%5e2-(y-30)%5e2);%20P(20,30,10);;scale(0.2)"
+  >Displacement of the coordinate system</a>.
+<li><a href="plot-bivariate.html?sin(10/x)sin(10/y);tile(0.2)"
+  >Smaller tile resolution</a>. Takes some computing time.
+<li><a href="plot-bivariate.html?f(x,y),%5ba(t),b(t),f(a(t),b(t))%5d;t0:=0,t1:=4,f(x,y):=sin(x)*sin(y),a(t):=t*cos(pi*t),b(t):=t*sin(pi*t);;scale(0.5)"
+  >Lifting a curve on a surface</a>.
+<li><a href="plot-bivariate.html?f(x,y),f(x,y)=1;f(x,y):=x*sin(y)+y*cos(x),alpha:=0.6;;scale(1,1,5)"
+  >A bivariate function with a level curve</a>.
+<li><a href="plot-bivariate.html?f(x,y),f(x,y)=c%20for%20c%20in%20-4:8;f(x,y):=x*sin(y)+y*cos(x);;scale(0.5)"
+  >A bivariate function with many level curves</a>.
+<li><a href="plot.html?x*sin(y)+y*cos(x);%20iso(1);%20freq(1)"
+  >Level curves in the xy-plane</a>.
+  <a href="plot.html?x*sin(y)+y*cos(x);%20iso(2);%20freq(1)"
+  >With periodic heat map</a>.
+<li><a href="plot-bivariate.html?4exp((-x%5e2-y%5e2)/a);%20slider(a,1,10);;scale(0.5)"
+  >Slider for one parameter</a>.
+<li><a href="plot-bivariate.html?4exp(-abs(x/a)%5eb-abs(y/a)%5eb);%20slider(a,1,10),slider(b,1,4);;scale(0.5)"
+  >Sliders for two parameters</a>.
+</ul>
+
+<br>
+<h3 id="parametric-surfaces">Parametric surfaces</h3>
+<ul>
+<li><a href="plot-bivariate.html?%5bcos(u)sin(v),sin(u)sin(v),cos(v)%5d;;scale(0.2)"
+  >The unit ball</a>.
+<li><a href="plot-bivariate.html?%5b(R+r*cos(v))cos(u),(R+r*cos(v))sin(u),r*sin(v)%5d;R:=4,r:=2,v1:=2pi"
+  >A torus</a>.
+<li><a href="plot-bivariate.html?%5ba*cos(u)sin(v),a*sin(u)sin(v),a*(cos(v)+ln(tan(v/2)))+b*u%5d;a:=4,b:=0.8,u1:=4pi,v0:=0.1,v1:=1"
+  >Dini's surface</a>.
+<li><a href="plot-bivariate.html?f(u,v),f(cos(t),sin(2t)+1);R:=4,r:=2,v1:=2pi,f(u,v):=%5b(R+r*cos(v))cos(u),(R+r*cos(v))sin(u),r*sin(v)%5d"
+  >A curve on a torus</a>.
+</ul>
+
+<br>
+<h3 id="implicit-surfaces">Implicit surfaces</h3>
+<ul>
+<li><a href="plot-implicit.html?x%5e2+y%5e2+z%5e2=1;;scale(0.2)"
+  >The unit ball</a>.
+<li><a href="plot-implicit.html?x%5e2+y%5e2-z%5e2=1;;scale(0.2)"
+  >A hyperboloid</a>.
+<li><a href="plot-implicit.html?(x%5e2+y%5e2+z%5e2+R%5e2-r%5e2)%5e2=4R%5e2*(x%5e2+y%5e2);%20R:=4,r:=2,w(14)"
+  >A torus</a>.
+<li><a href="plot-implicit.html?x%5e2+y%5e2-r*z%5e2=1;%20slider(r,-1,1);;scale(0.5)"
+  >Slider for one parameter</a>.
+<li><a href="plot-implicit.html?x%5e2+y%5e2+a*(x*y)%5e2-r*z%5e2=1;%20slider(r,-1,4),slider(a,-1,2);;scale(0.5)"
+  >Sliders for two parameters</a>.
+</ul>
+
+<br>
+<h3 id="vector-fields">Vector fields</h3>
+<ul>
+<li><a href="vector-field.html?%5bx,y%5d"
+  >A vector field</a>. <a href="vector-field.html?%5bx,y%5d;%20stream(1)"
+  >Stream lines</a>.
+<li><a href="vector-field.html?y%27=x*y,%20%5b1,x*y%5d;%20p:=%5b0,1%5d"
+  >Slope field of an ODE</a>. <a href="vector-field.html?y%27=x*y,%20%5b1,x*y%5d;%20p:=%5b0,1%5d;%20stream(1)"
+  >Stream lines</a>.
+<li><a href="vector-field.html?(y%27=y-x;%20p:=%5b0,n%5d)%20for%20n%20in%20-4:4,%20%5b1,y-x%5d"
+  >A slope field and solution curves</a>.
+<li><a href="vector-field.html?nabla(U,%5bx,y%5d);%20U(x,y):=1/abs(%5bx,y%5d);;scale(0.1)"
+  >Gradient field of a scalar field</a>.
+<li><a href="real-mapping.html?%5bu+v,v%5d"
+  >A linear coordinate mapping</a>.
+  <a href="real-mapping.html?%5b%5b1,1%5d,%5b0,1%5d%5d*%5bu,v%5d"
+  >As a matrix</a>.
+<li><a href="real-mapping.html?%5bu*cos(v),u*sin(v)%5d;%20u0:=0,v0:=0,v1:=2pi"
+  >A non-linear coordinate mapping</a>.
+<li><a href="real-mapping.html?rot(2grad)*%5bu,v%5d"
+  >A rotation matrix</a>.
+</ul>
+
+<br>
+<h3 id="complex-functions">Complex functions</h3>
+<ul>
+<li><a href="plot-complex.html?gamma(z)"
+  >The Gamma function</a>.
+<li><a href="plot-complex.html?exp(1/z);scale(0.1)"
+  >A complex function</a> at given scale.
+<li><a href="relief.html?abs(z)"
+  >Relief of a complex function</a>.
+<li><a href="plot-mapping.html?1/z;;scale(0.2)"
+  >Apply a complex mapping to the coordinate grid</a>.
+<li><a href="cplot.html"
+  >A complex valued function</a>.
+<li><a href="path.html"
+  >A complex valued function as a parametric curve</a>.
+<li><a href="cplot.html?re(f(x)),im(f(x)),abs(f(x));%20f(x):=exp(i*x)"
+  >Real part, imaginary part und absolute value of a complex values function</a>.
+<li><a href="plot-complex.html?f%27(z);%20f(z):=ln(z)"
+  >Derivative of a complex function</a>.
+<li><a href="plot-complex.html?int(%5b1,if(im(z)%3c0,-i,i),z%5d,f);%20f(z):=1/z"
+  >Integral representation of the complex logarithm</a>.
+<li><a href="plot-complex.html?int(%5b0,20%5d,t.t%5e(z-1)*e%5e(-t))"
+  >Integral representation of the gamma function</a>.
+<li><a href="riemann.html"
+  >A Riemann surface</a>.
+</ul>
+
+<br>
+<h3 id="complex-dynamics">Complex dynamics</h3>
+<ul>
+<li><a href="fractal.html?z%5e2+c;;scale(0.2)"
+  >The Mandelbrot set</a>. <a href="fractal.html?z%5e2+c;%20slider(shift,0,1);;scale(0.2)"
+  >Color shift</a>.
+<li><a href="fractal.html?z%5e2+c;N:=400,P(-0.20436,1.10358),scale(0.000005)"
+  >The Mandelbrot set</a> at given position and scale.
+<li><a href="fractal.html?z%5e2+c;%20N:=1000;%20n:=2;;scale(0.2)"
+  >The Mandelbrot set</a> with N iterations and n*n samples.
+<li><a href="fractal.html?z%5e2-0.8+0.2i;%20z0(c):=c;;scale(0.2)"
+  >A Julia set</a>.
+<li><a href="fractal.html?z%5e2-0.8+0.2i;%20z0(c):=c,%20P(-0.06,0.8),scale(0.005)"
+  >A Julia set</a> at given position and scale.
+<li><a href="newton.html"
+  >A Newton fractal</a>.
+<li><a href="newton.html?z-f(z,c)/(z.f(z,c))%27(z);f(z,c):=z%5e3+(c-1)*z-c,z0(c):=0;;scale(0.02),P(0.31396,1.63954)"
+  >Newton fractal</a> from initial value zero for a family of cubic polynomials.
+<li><a href="plot.html?(r:=x,iter(x.r*x*(1-x),1000,rand(0,1)));;scale(0.05,0.1),P(3.46,0.54)"
+  >Bifurcation diagram of the logistic map</a>.
+</ul>
+
+</body>
+</html>
