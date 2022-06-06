@@ -2,12 +2,48 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Page coming soon</title>
+    <title></title>
     <style media="screen">
-      center{margin: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+      body{background: darkgray; padding: 0px 10px;}
+      .placards{width: 100%;display: grid;grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));grid-gap: 0.7em;justify-content: center;}
+      .placard{box-shadow: none; margin: 10px 5px 0px 5px; transition: 0.3s; background-color: rgba(230, 230, 230, 0.8); border-radius: 5px; padding: 15px; font-size: 15px; text-align: center; display: flex; flex-direction: column; }
+      .placard:hover{box-shadow: 0 3px 9px  rgba(70, 70, 60, 0.8);}
+      a.link{color: inherit;text-decoration: none}
+      button.link{margin-top: auto;cursor: pointer; padding: 10px; min-width: 100px; background: rgba(200, 250, 240, 0.5)}
+      button.link:hover{filter: hue-rotate(90deg);}
     </style>
   </head>
   <body>
-    <center><h2>Page coming soon!</h2></center>
+
+    <center>
+     <h1>Theo's Services</h1>
+    </center>
+
+    <hr>
+
+    <div class="placards">
+
+      <div class="placard">
+        <a href="cas" target="_blank" class="link">
+          <h1>CAS Algebra Suite</h1>
+          <p>CAS is a lightweight suite of tools for algebraic graphing and analysis.</p>
+        </a>
+      </div>
+
+      <div class="placard">
+        <a href="cyberchef" target="_blank" class="link">
+          <h1>Cyberchef</h1>
+          <p>Cyberchef is a useful tool which can perform a wide variety of operations on anything you input, including hashing, converting, and compressing.</p>
+        </a>
+      </div>
+
+      <div class="placard">
+        <a href="#" target="_blank" class="link"></a>
+        <h1>More to come...(?)</h1>
+        <p>I would like to host a number of other instances here in the future. Among my top priorities are: <a href="https://github.com/searxng/searxng">SearXNG</a>, <a href="https://github.com/iv-org/invidious">Invidious</a>, <a href="https://simplytranslate.org/">SimplyTranslate</a>, and <a href="https://codeberg.org/orenom/Wikiless">Wikiless</a>.</p>
+      </div>
+
+    </div>
+
   </body>
 </html>
