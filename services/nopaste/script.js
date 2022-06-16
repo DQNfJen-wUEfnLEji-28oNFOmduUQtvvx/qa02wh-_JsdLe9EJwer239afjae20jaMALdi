@@ -1,4 +1,4 @@
-const blob = new Blob(['importScripts("lzma_worker.min.js");']);
+const blob = new Blob(['importScripts("https://cdn.jsdelivr.net/npm/lzma@2.3.2/src/lzma_worker.min.js");']);
 const lzma = new LZMA(window.URL.createObjectURL(blob));
 
 let editor = null;
