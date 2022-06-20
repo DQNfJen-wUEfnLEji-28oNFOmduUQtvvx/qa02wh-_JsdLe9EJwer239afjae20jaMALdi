@@ -1,39 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <meta charset="utf8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo's Services</title>
+    <style media="screen">
+      body{padding: 0px 10px;}
+      h1{text-align: center;}
+      .placards{width: 100%;display: grid;grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));grid-gap: 0.7em;justify-content: center;}
+      .placard{background: inherit; box-shadow: 0 3px 9px  rgba(70, 70, 60, 0.8);margin: 10px 5px 0px 5px; transition: 0.3s; border-radius: 5px; padding: 15px; font-size: 15px; text-align: center; display: flex; flex-direction: column; }
+      .placard:hover{background: #efffee;}
+      .placard.unresponsive{cursor: default;margin: 0px 5px 10px 0px;box-shadow: none;}
+      .placard.unresponsive:hover{background: inherit;}
+      a.link{color: inherit;text-decoration: none}
+      button.link{margin-top: auto;cursor: pointer; padding: 10px; min-width: 100px; background: rgba(200, 250, 240, 0.5)}
+      button.link:hover{filter: hue-rotate(90deg);}
+      @media (max-width:450px){
+        .placards{grid-template-columns: repeat(auto-fill, minmax(202px, 1fr));grid-gap: 0.7em;}
+      }
+    </style>
   </head>
   <body>
-  <!--
-  add/remove
-  bgcolor=001723 text=989999 link=88ffff vlink=ffc0cb alink=ff00ff
-  to style/unstyle document
 
-  <center> tag centers items
-  -->
+    <center>
+     <h1>Theo's Services</h1>
+    </center>
+
+    <hr>
+
+    <div class="placards">
+
+      <div class="placard">
+        <a href="cas/" target="_blank" class="link">
+          <h1>CAS Algebra Suite</h1>
+          <p>CAS is a lightweight suite of tools for algebraic graphing and analysis.</p>
+        </a>
+      </div>
+
+      <div class="placard">
+        <a href="cyberchef/" target="_blank" class="link">
+          <h1>Cyberchef</h1>
+          <p>Cyberchef is a useful tool which can perform a wide variety of operations on anything you input, including hashing, converting, and compressing.</p>
+        </a>
+      </div>
+
+      <div class="placard">
+        <a href="nopaste/" target="_blank" class="link">
+          <h1>NoPaste</h1>
+          <p>Serverless pastebin</p>
+        </a>
+      </div>
+
+      <div class="placard">
+        <a href="nopasteweb/" target="_blank" class="link">
+          <h1>NoPaste Web</h1>
+          <p>Serverless webhosting</p>
+        </a>
+      </div>
+
+      <div class="placard">
+        <a href="passcheck/" target="_blank" class="link">
+          <h1>PassCheck</h1>
+          <p>PassCheck allows you to generate passwords, see how long it may take to crack them, and check to see if they have been featured in known data breaches.</p>
+        </a>
+      </div>
 
 
-    <h1>&nbsp;Theo's Website</h1>
+
+
+    </div>
+
+    <br>
     <hr>
     <br>
-    &nbsp;<a target="_blank" href="about">About</a>
-    &nbsp;<a target="_blank" href="services">Services</a>
-    &nbsp;<a target="_blank" href="blog">Blog</a>
-    &nbsp;<a target="_blank" href="software">Software I use</a>
-    &nbsp;<a target="_blank" href="recipes">Recipes</a>
-    &nbsp;<a target="_blank" href="videos">Videos</a>
-    &nbsp;<a target="_blank" href="contact">Contact me</a>
-    &nbsp;<a target="_blank" href="rss">Rss</a>
-    &nbsp;<a target="_blank" href="crypto">Donate</a>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <h3>&nbsp;Recent Posts</h3>
-    <p>&nbsp;There are no recent posts</p>
-    <br>
-    <hr>
+
+      <div class="placard unresponsive">
+        <a class="link">
+          <h1>More to come...(?)</h1>
+          <p>I would like to host a number of other instances here in the future. Among my top priorities are: <a href="https://github.com/searxng/searxng">SearXNG</a>, <a href="https://github.com/iv-org/invidious">Invidious</a>, <a href="https://simplytranslate.org/">SimplyTranslate</a>, <a href="https://docs.cryptpad.fr/en/dev_guide/setup.html">Cryptpad</a>, and <a href="https://codeberg.org/orenom/Wikiless">Wikiless</a>.</p>
+        </a>
+      </div>
+
 
   </body>
 </html>
