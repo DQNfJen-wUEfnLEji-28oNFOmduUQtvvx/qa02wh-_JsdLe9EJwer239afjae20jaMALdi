@@ -48,7 +48,14 @@ document.addEventListener('DOMContentLoaded', function(){
           html = plaintext;
         }
 
-        document.documentElement.innerHTML = html;
+        if (window.location.href.indexOf('?x=js') > -1) {
+          document.documentElement.innerHTML = html;
+        }
+
+        else {
+          document.write(html);
+        }
+        
       });
     };
     reader.readAsArrayBuffer(blob);
