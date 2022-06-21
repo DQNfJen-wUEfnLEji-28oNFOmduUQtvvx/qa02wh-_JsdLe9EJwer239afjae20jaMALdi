@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8"/>
+<title>&lrm;</title>
+<style>
+* {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  width: 0px;
+}
+#plaintext {
+ height: 0px;
+}
+</style>
+<script src="lzma.js"></script>
+<script src="md.js"></script>
+<script>
+var matches;
+var lzma = new LZMA("lzma_worker.js");
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  var base64 = location.hash.substr(1);
+  if (base64.length == 0) return;
+
+  if (!fetch) {
+    alert("Not a valid URL.  Sorry! :(");
+    return;
+  }
+
+  fetch("data:application/octet-stream;base64,"+base64).then(r => r.blob()).then(function(blob){
+    var reader = new FileReader();
+    reader.onload = function(){
+      var compressed_data = Array.from(new Uint8Array(reader.result));
+      lzma.decompress(compressed_data, function(plaintext, error){
+        if (error) {
+          alert("Failed to decompress data: "+error);
+          return;
+        }
+        if (window.location.href.indexOf('?l=mrwn') > -1 || window.location.href.indexOf('?l=md') > -1 || window.location.href.indexOf('?l=markdown') > -1){
+          converter = new showdown.Converter(),
+          html = converter.makeHtml(plaintext);
+        }
+
+        else {
+          html = plaintext;
+        }
+
+        if (window.location.href.indexOf('?x=js') > -1) {
+          document.documentElement.innerHTML = html;
+        }
+
+        else {
+          document.write(html);
+        }
+        
+      });
+    };
+    reader.readAsArrayBuffer(blob);
+  });
+});
+
+function url_generate(format) {
+  var plaintext = document.getElementById("plaintext").value;
+  lzma.compress(plaintext, 1, function(compressed, error){
+    if (error) {
+      alert("Failed to compress data: "+error);
+      return;
+    }
+  });
+}
+
+
+
+</script>
+</head>
+<body>
+
+<textarea id="plaintext" spellcheck="false"></textarea>
+
+</body>
+</html>
