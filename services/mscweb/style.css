@@ -1,0 +1,6 @@
+html, body { min-height: 100%; }
+/*body { background: beige;}*/
+.hidden { display: none; visibility: hidden; }
+*::-webkit-scrollbar{width: 0px;}
+*::-moz-webkit-scrollbar{width: 0px;}
+/*.abmid { position: absolute; line-height: 100vh; margin: auto; width: 100%; text-align: center;}*/
