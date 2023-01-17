@@ -1,0 +1,9 @@
+* {outline: none;}
+.hidden,.h {display: none;}
+body{background-color: black; color: white;}
+div {max-width: 100%;}
+video {max-width: 100%;}
+summary.title{margin-top: 0.5em; font-size: 125%; font-weight:bold;}
+#search {border-radius: 2em; padding: 0.5em; border: none; box-shadow: 1px 1px 10px 1px rgb(224, 215, 215);}
+#search:focus{box-shadow: 2px 0px 10px 2px rgb(202, 17, 248); color: rgb(7, 152, 7);}
+#searchoptions {max-width: 100%;}

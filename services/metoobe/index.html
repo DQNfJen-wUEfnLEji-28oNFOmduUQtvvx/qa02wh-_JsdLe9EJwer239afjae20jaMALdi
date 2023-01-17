@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metoobe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="invid.js"></script>
+</head>
+<body>
+    <head>
+        <span style="font-size: 150%;">Metoobe</span>  <span style="float: right;"><span style="transform: rotate(180deg); display: inline-block;">©</span> Copyleft 2023 Me (not you)</span>
+    </head>
+<center id="searchoptions">
+        <input  type="text" id="search" placeholder="search query..." onkeydown="if(event.which==13){searchQuery(document.getElementById('search').value)}"> 
+        <br><br>    
+    <input style="padding: 0.25em;" type="button" name="" id="searchbutton" value="Search (or press enter)" onclick="searchQuery(document.getElementById('search').value)"> <br><br>
+    <label style="padding: 0.25em;" for="type">Video</label> <input style="padding: 0.25em;" id="type" type="checkbox" onchange="this.previousElementSibling.innerHTML=gmap[this.checked]" checked> –-–
+    <label for="urltext">URLText</label> <input type="checkbox" id="urltext" checked="true"> –-–
+    <label for="nfetch">Number of results to display:</label> <input title="Number of results to display" type="number" style="padding:0.25em;width: 2.5em; max-width: 3em; background-color: inherit; color: inherit; border: none; " name="" id="nfetch" value="7"> 
+    </center>
+   <br>
+    <center>
+        <div id="results"></div>
+    </center>
+    <br>
+</body>
+<script src="main.js"></script>
+</html>
